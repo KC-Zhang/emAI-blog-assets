@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+
+  <!-- Background -->
+  <rect width="960" height="620" rx="12" fill="#fafafa"/>
+
+  <!-- Title -->
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#111">How AI Chat Memory Works</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#64748b">A rolling window of summarized memos + recent raw messages</text>
+
+  <!-- ==================== TIMELINE ==================== -->
+  
+  <text x="60" y="90" font-size="13" font-weight="700" fill="#111">Conversation Timeline</text>
+  <text x="60" y="106" font-size="10" fill="#64748b">Each batch = 8 messages</text>
+  
+  <text x="880" y="90" text-anchor="end" font-size="10" font-weight="600" fill="#94a3b8">time →</text>
+
+  <!-- 1. Forgotten -->
+  <rect x="60" y="120" width="100" height="24" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  <text x="66" y="136" font-size="10" fill="#cbd5e1">💬💬💬💬💬💬💬💬</text>
+
+  <line x1="110" y1="144" x2="110" y2="158" stroke="#e2e8f0" stroke-width="1"/>
+  <polygon points="107,158 113,158 110,163" fill="#e2e8f0"/>
+
+  <rect x="60" y="165" width="100" height="24" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  <text x="72" y="181" font-size="9" fill="#94a3b8" text-decoration="line-through">📝 Memo 4</text>
+  <text x="110" y="202" text-anchor="middle" font-size="9" font-style="italic" fill="#cbd5e1">expired</text>
+
+
+  <!-- 2. Rolling Window (15 Kept Memos) -->
+  <rect x="180" y="110" width="460" height="90" rx="8" fill="none" stroke="#fdba74" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="190" y="103" font-size="10" font-weight="600" fill="#ea580c">Rolling window: Last 15 batches summarized</text>
+  <text x="635" y="103" text-anchor="end" font-size="10" fill="#f97316">window slides ▸</text>
+
+  <!-- Memo 5 -->
+  <rect x="196" y="120" width="100" height="24" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="202" y="136" font-size="10" fill="#64748b">💬💬💬💬💬💬💬💬</text>
+
+  <line x1="246" y1="144" x2="246" y2="158" stroke="#94a3b8" stroke-width="1"/>
+  <polygon points="243,158 249,158 246,163" fill="#94a3b8"/>
+
+  <rect x="196" y="165" width="100" height="24" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="218" y="181" font-size="9" font-weight="600" fill="#475569">📝 Memo 5</text>
+
+  <!-- Memo 6 -->
+  <rect x="310" y="120" width="100" height="24" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="316" y="136" font-size="10" fill="#64748b">💬💬💬💬💬💬💬💬</text>
+
+  <line x1="360" y1="144" x2="360" y2="158" stroke="#94a3b8" stroke-width="1"/>
+  <polygon points="357,158 363,158 360,163" fill="#94a3b8"/>
+
+  <rect x="310" y="165" width="100" height="24" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="332" y="181" font-size="9" font-weight="600" fill="#475569">📝 Memo 6</text>
+
+  <!-- Dots -->
+  <text x="438" y="156" font-size="18" fill="#94a3b8">···</text>
+
+  <!-- Memo 19 -->
+  <rect x="490" y="120" width="100" height="24" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="496" y="136" font-size="10" fill="#64748b">💬💬💬💬💬💬💬💬</text>
+
+  <line x1="540" y1="144" x2="540" y2="158" stroke="#ea580c" stroke-width="1.5"/>
+  <polygon points="536,158 544,158 540,164" fill="#ea580c"/>
+
+  <rect x="490" y="165" width="100" height="24" rx="4" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+  <text x="510" y="181" font-size="9" font-weight="700" fill="#9a3412">📝 Memo 19</text>
+
+  <!-- 3. Current Working Memory -->
+  <rect x="660" y="110" width="220" height="90" rx="8" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="670" y="103" font-size="10" font-weight="600" fill="#2563eb">Current working memory</text>
+
+  <rect x="720" y="120" width="100" height="24" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="726" y="136" font-size="10" fill="#2563eb">💬💬💬💬💬💬💬💬</text>
+
+  <line x1="770" y1="144" x2="770" y2="158" stroke="#3b82f6" stroke-width="1.5"/>
+  <polygon points="766,158 774,158 770,164" fill="#3b82f6"/>
+
+  <rect x="680" y="165" width="180" height="24" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="770" y="181" text-anchor="middle" font-size="10" font-weight="600" fill="#1d4ed8">💬 Sent Raw (Full Fidelity)</text>
+
+
+  <!-- ==================== ARROWS DOWN TO PROMPT ==================== -->
+  
+  <path d="M 410 206 L 410 230 L 370 230 L 370 250" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M 770 206 L 770 230 L 370 230" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="366,250 374,250 370,256" fill="#94a3b8"/>
+  
+  <!-- Backing for text to hide the line behind it -->
+  <rect x="260" y="222" width="220" height="16" fill="#fafafa"/>
+  <text x="370" y="234" text-anchor="middle" font-size="10" font-weight="600" fill="#64748b">memos + raw messages feed into ▼</text>
+
+  <!-- ==================== PROMPT STACK & DETAILS ==================== -->
+  
+  <g transform="translate(100, 260)">
+    <rect x="0" y="0" width="540" height="158" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="16" y="22" font-size="12" font-weight="700" fill="#111">Prompt Stack (What the LLM sees)</text>
+
+    <!-- Layers -->
+    <rect x="12" y="34" width="516" height="20" rx="4" fill="#dbeafe"/>
+    <text x="24" y="48" font-size="10" fill="#1e40af">🛡️ System prompt (personality, rules)</text>
+    <text x="474" y="48" font-size="8" font-weight="700" fill="#16a34a">CACHED</text>
+
+    <rect x="12" y="58" width="516" height="20" rx="4" fill="#f3e8ff"/>
+    <text x="24" y="72" font-size="10" fill="#7e22ce">🎭 Character (background, style, worldview)</text>
+    <text x="474" y="72" font-size="8" font-weight="700" fill="#16a34a">CACHED</text>
+
+    <rect x="12" y="82" width="516" height="20" rx="4" fill="#fff1f2"/>
+    <text x="24" y="96" font-size="10" fill="#be123c">📝 Last 15 Memos (Long-term memory)</text>
+    <text x="474" y="96" font-size="8" font-weight="700" fill="#16a34a">CACHED</text>
+
+    <rect x="12" y="106" width="516" height="20" rx="4" fill="#ecfdf5"/>
+    <text x="24" y="120" font-size="10" fill="#065f46">💬 Last 8 messages (Working memory)</text>
+
+    <rect x="12" y="130" width="516" height="20" rx="4" fill="#fefce8"/>
+    <text x="24" y="144" font-size="10" fill="#854d0e">✉️ New user message</text>
+  </g>
+
+  <!-- Memo Details Panel -->
+  <g transform="translate(680, 260)">
+    <rect x="0" y="0" width="220" height="148" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <text x="14" y="22" font-size="11" font-weight="700" fill="#475569">What's inside each memo?</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">💛 Relationship progression (trust)</text>
+    <text x="14" y="56" font-size="10" fill="#64748b">⭐ Significant milestones</text>
+    <text x="14" y="72" font-size="10" fill="#64748b">🎁 Notable items &amp; keepsakes</text>
+    <text x="14" y="88" font-size="10" fill="#64748b">🔀 Major story turning points</text>
+
+    <line x1="10" y1="100" x2="210" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <text x="14" y="116" font-size="9" font-weight="700" fill="#991b1b">Example output:</text>
+    <text x="14" y="130" font-size="8" fill="#334155">【Highlight】: Named stray cat "Mochi".</text>
+    <text x="14" y="142" font-size="8" fill="#334155">【Highlight】: Revealed fear of abandonment.</text>
+  </g>
+
+  <!-- ==================== RESPONSE & LOOP ==================== -->
+
+  <!-- Arrow down to response -->
+  <line x1="370" y1="410" x2="370" y2="430" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="366,430 374,430 370,436" fill="#94a3b8"/>
+
+  <!-- Response -->
+  <rect x="230" y="438" width="280" height="32" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="370" y="458" text-anchor="middle" font-size="12" font-weight="600" fill="#166534">✅ AI responds with full context</text>
+
+  <!-- Arrow down to memory creation -->
+  <line x1="370" y1="472" x2="370" y2="492" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="366,492 374,492 370,498" fill="#94a3b8"/>
+
+  <!-- Memory Creation -->
+  <rect x="170" y="500" width="400" height="36" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="370" y="522" text-anchor="middle" font-size="11" font-weight="600" fill="#991b1b">🔄 When 8 msgs accumulate: creates new memo (async)</text>
+
+  <!-- Loop arrow -->
+  <path d="M 570 518 L 650 518 L 650 177 L 620 177" fill="none" stroke="#f87171" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <polygon points="622,173 622,181 616,177" fill="#f87171"/>
+
+  <!-- Formula at bottom -->
+  <rect x="220" y="566" width="520" height="28" rx="14" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="480" y="584" text-anchor="middle" font-size="11" fill="#475569">
+    <tspan font-weight="700">15 memos</tspan> + <tspan font-weight="700">8 raw turns</tspan> ≈ <tspan font-weight="700" fill="#111">~128 messages remembered</tspan> (compressed) + 16 verbatim
+  </text>
+
+</svg>
